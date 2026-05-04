@@ -98,7 +98,7 @@ Công dụng:
 
 ---
 
-# 4. Ví dụ alt tốt
+4. Ví dụ alt tốt
 
 Ảnh sản phẩm iPhone 16:
 

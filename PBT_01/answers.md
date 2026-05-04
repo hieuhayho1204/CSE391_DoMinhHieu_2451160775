@@ -112,18 +112,18 @@ Câu B4:
 Trong trang web thegioididong.com:
   1. 3 thẻ semantic HTML5 mà trang đó sử dụng
     - Thẻ `<header>`:
-    ![alt text](screenshots\image-1.png)
+    ![alt text](screenshots/image-1.png)
     - Thẻ `<section>`:
-    ![alt text](screenshots\image-2.png)
+    ![alt text](screenshots/image-2.png)
     - Thẻ `<footer>`:
-    ![alt text](screenshots\image-3.png)
+    ![alt text](screenshots/image-3.png)
     - Thẻ `<body>` mà trang đó KHÔNG dùng đúng semantic:
-    ![alt text](screenshots\image-4.png)
+    ![alt text](screenshots/image-4.png)
 2. Thẻ `<table>` hiển thị chi tiết nội dung sản phẩm
-    - ![alt text](screenshots\image-5.png)
+    - ![alt text](screenshots/image-5.png)
 
 3. Thẻ `<form>`:
-   - ![alt text](screenshots\image-6.png)
+   - ![alt text](screenshots/image-6.png)
 
 Form có action là `<action="/tim-kiem">`. Khi submit, dữ liệu sẽ được gửi đến đường dẫn /tim-kiem
 

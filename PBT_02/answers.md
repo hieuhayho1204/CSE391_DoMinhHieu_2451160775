@@ -51,11 +51,15 @@ Ví dụ cụ thể: Nhóm các thông tin về địa chỉ giao hàng trong fo
   </fieldset>
 3.
 
-aria-label: Dùng khi 1 phẩn tử tương tác(button) không có văn bản hiển thị trên màn hình nhưng vẫn cần mô tả cho screen reader
+1. Thẻ ` <label for="email"> ` rất quan trọng vì nó giúp người dùng dùng screen reader (trình đọc màn hình) hiểu được ô nhập liệu đó dùng để làm gì.
 
-vì aria-label sẽ ghi đè nội dung của <label>, có thể gây nhầm lẫn nếu thông tin không khớp nhau
+2. ` <fieldset> ` và ` <legend> ` được dùng để gom nhóm các thông tin liên quan với nhau.
+Ví dụ: Nhóm phần "Thông tin giao hàng" bao gồm các ô Địa chỉ, Thành phố và Số điện thoại.
 
-Nguồn tham chiếu : 07_forms_interactive.md: Mục Accessibility — Form cho mọi người.
+3. aria-label dùng để mô tả chức năng cho những thành phần chỉ có icon mà không có chữ đi kèm (Ví dụ: Nút có icon giỏ hàng).
+Không nên dùng aria-label khi đã có thẻ ` <label> ` vì nó gây lặp thông tin và dư thừa đối với screen reader.
+
+Tài liệu tham chiếu: tuan_1_html5/07_forms_interactive.md -> Accessibility — Form cho mọi người
 
 Câu A4:
 

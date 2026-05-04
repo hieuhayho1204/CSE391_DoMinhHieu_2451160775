@@ -120,13 +120,13 @@ Công dụng:
 
 Câu A5:
 
-Cách 1 — <img>
+Cách 1 — `<img>`
 
 Dùng khi ảnh chỉ để minh họa, không cần chú thích hiển thị trên trang.
 Ảnh là một phần của nội dung xung quanh, không đứng độc lập. Ví dụ thực tế:
 Avatar người dùng trong header hoặc comment → chỉ cần hiển thị ảnh, không cần caption.
 
-Cách 2 — <figure> + <figcaption>
+Cách 2 — `<figure>` + `<figcaption>`
 
 Dùng khi ảnh cần có chú thích hiển thị bên dưới để bổ sung thông tin.
 Ảnh và caption là một khối nội dung độc lập, có thể tách ra khỏi văn bản mà vẫn hiểu được. Ví dụ thực tế:

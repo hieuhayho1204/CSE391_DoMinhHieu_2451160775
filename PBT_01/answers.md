@@ -18,7 +18,7 @@ Tab Network cho thấy:
 - Tổng thời gian load trang
 - Header (request & response)
 
-![alt text](image.png)
+![alt text](screenshots/a1.png)
 
 Câu A2:
 
@@ -32,54 +32,46 @@ Trang web bị đánh giá SEO thấp vì:
 
 2. Các lỗi semantic:
 
-Lỗi 1: Không dùng thẻ <header>
-<div class="header">
+Lỗi 1: Không dùng thẻ `<header>`
+`<div class="header">`
 
-→ Nên dùng <header> để mô tả phần đầu trang
+→ Nên dùng `<header>` để mô tả phần đầu trang
 
-Lỗi 2: Không dùng thẻ <nav> cho menu
-<div class="menu">
+Lỗi 2: Không dùng thẻ `<nav>` cho menu
+`<div class="menu">`
 
-→ Nên dùng <nav> để biểu thị thanh điều hướng
+→ Nên dùng `<nav>` để biểu thị thanh điều hướng
 
 Lỗi 3: Không dùng heading cho tiêu đề
-<div class="title">iPhone 16 Pro</div>
+`<div class="title">iPhone 16 Pro</div>`
 
-→ Nên dùng <h1> hoặc <h2>
+→ Nên dùng `<h1>` hoặc `<h2>`
 
-Lỗi 4: Không dùng <article> cho sản phẩm
-<div class="product">
+Lỗi 4: Không dùng `<article>` cho sản phẩm
+`<div class="product">`
 
-→ Nội dung độc lập nên dùng <article>
+→ Nội dung độc lập nên dùng `<article>`
 
 Lỗi 5: Ảnh không có alt
-<img src="iphone.jpg">
+`<img src="iphone.jpg">`
 
 → Nên thêm alt để hỗ trợ SEO
 
 Câu A3:
-
-┌─────────────┐
-│   Hộp 1     │  ← div: chiếm cả hàng
-└─────────────┘
-Text A Text B     ← span: nằm cùng hàng nhau
-┌─────────────┐
-│   Hộp 2     │  ← div: xuống hàng mới
-└─────────────┘
-Text C **Text D**  ← span + strong: cùng hàng, Text D in đậm
-┌─────────────┐
-│   Hộp 3     │  ← div: xuống hàng mới
-└─────────────┘
+- Mô tả bằng hình ảnh kết quả hiển thị của đoạn HTML: ![alt text](screenshots/image-7.png)  
+- Giải thích:
+    - Thẻ `<div>` là Block element, đặc tính của nó là chiếm CẢ DÒNG và tự động xuống dòng mới. Do đó, "Hộp 1", "Hộp 2", và "Hộp 3" sẽ đứng một mình trên các dòng riêng biệt.
+    - Thẻ `<span>` và `<strong>` là Inline elements, đặc tính của chúng là chỉ chiếm khoảng không gian vừa đủ cho NỘI DUNG và nằm cùng dòng với nhau. Vì vậy, "Text A" và "Text B" sẽ nằm cạnh nhau trên một dòng; tương tự, "Text C" và "Text D" cũng sẽ nằm cạnh nhau trên một dòng.
 
 Câu A4:
 
-<thead> là phần đầu bảng (tiêu đề cột) <tbody> là phần thân bảng (dữ liệu chính) <tfoot> là phần chân bảng (tổng kết)
+`<thead>` là phần đầu bảng (tiêu đề cột) `<tbody>` là phần thân bảng (dữ liệu chính) `<tfoot>` là phần chân bảng (tổng kết)
 
 Lý do không nên dùng table để tạo layout trang web
 
-Lý do 1 — Sai ngữ nghĩa (semantic) <table> sinh ra để hiển thị dữ liệu dạng bảng, không phải để chia cột layout. Google và screen reader hiểu <table> là "đây là bảng dữ liệu" — dùng sai mục đích làm SEO và accessibility kém đi.
+Lý do 1 — Sai ngữ nghĩa (semantic) `<table>` sinh ra để hiển thị dữ liệu dạng bảng, không phải để chia cột layout. Google và screen reader hiểu `<table>` là "đây là bảng dữ liệu" — dùng sai mục đích làm SEO và accessibility kém đi.
 
-Lý do 2 — Code phức tạp, khó bảo trì Layout bằng table phải lồng <tr>, <td> chằng chịt, rất khó đọc và sửa. Thêm một cột hay thay đổi bố cục là phải sửa rất nhiều chỗ.
+Lý do 2 — Code phức tạp, khó bảo trì Layout bằng table phải lồng `<tr>`, `<td>` chằng chịt, rất khó đọc và sửa. Thêm một cột hay thay đổi bố cục là phải sửa rất nhiều chỗ.
 
 Lý do 3 — Tải chậm hơn Trình duyệt phải đọc toàn bộ table trước khi render, vì cần biết kích thước tất cả các ô.
 
@@ -89,29 +81,29 @@ Câu B3:
 
 # Danh sách lỗi và cách sửa
 
-Lỗi 1: Dòng 1 — <!DOCTYPE> sai cú pháp — Sửa thành <!DOCTYPE html>
+Lỗi 1: Dòng 1 — <!DOCTYPE> sai cú pháp — Sửa thành `<!DOCTYPE html>`
 
-Lỗi 2: Dòng 2 — Thiếu thuộc tính lang — Thêm lang="vi" vào thẻ <html>
+Lỗi 2: Dòng 2 — Thiếu thuộc tính lang — Thêm lang="vi" vào thẻ `<html>`
 
-Lỗi 3: Dòng 4 — Thẻ <title> không đóng — Thêm </title>
+Lỗi 3: Dòng 4 — Thẻ `<title>` không đóng — Thêm `</title>`
 
 Lỗi 4: Dòng 5 — charset sai (utf8) — Sửa thành UTF-8
 
-Lỗi 5: Dòng 9 — Thẻ <h1> không đóng đúng — Sửa </h1>
+Lỗi 5: Dòng 9 — Thẻ `<h1>` không đóng đúng — Sửa `</h1>`
 
-Lỗi 6: Dòng 13 — Thẻ <a> không đóng — Thêm </a>
+Lỗi 6: Dòng 13 — Thẻ `<a>` không đóng — Thêm `</a>`
 
-Lỗi 7: Dòng 20 — <img> thiếu dấu ngoặc kép và alt — Sửa src="iphone.jpg" và thêm alt
+Lỗi 7: Dòng 20 — `<img>` thiếu dấu ngoặc kép và alt — Sửa src="iphone.jpg" và thêm alt
 
-Lỗi 8: Dòng 22 — Sai thứ tự đóng thẻ <b> — Sửa thành <strong>...</strong>
+Lỗi 8: Dòng 22 — Sai thứ tự đóng thẻ `<b>` — Sửa thành `<strong>...</strong>`
 
-Lỗi 9: Dòng 18 — Dùng <h3> không hợp lý — Sửa thành <h2>
+Lỗi 9: Dòng 18 — Dùng `<h3>` không hợp lý — Sửa thành `<h2>`
 
-Lỗi 10: Dòng 27 — Bảng không có <thead>, <tbody> — Thêm cấu trúc semantic
+Lỗi 10: Dòng 27 — Bảng không có `<thead>`, `<tbody>` — Thêm cấu trúc semantic
 
-Lỗi 11: Dòng 36 — Dùng 2 thẻ <main> — Sửa thẻ thứ 2 thành <aside>
+Lỗi 11: Dòng 36 — Dùng 2 thẻ `<main>` — Sửa thẻ thứ 2 thành `<aside>`
 
-Lỗi 12: Dòng 41 — Thẻ <p> trong footer không đóng — Thêm </p>
+Lỗi 12: Dòng 41 — Thẻ `<p>` trong footer không đóng — Thêm `</p>`
 
 Lỗi 13: Link href="home", "products" không chuẩn — Sửa thành "#" hoặc đường dẫn hợp lệ
 
@@ -119,25 +111,21 @@ Câu B4:
 
 Trong trang web thegioididong.com:
   1. 3 thẻ semantic HTML5 mà trang đó sử dụng
-    - Thẻ <header>:
-    ![alt text](image-1.png)
+    - Thẻ `<header>`:
+    ![alt text](screenshots\image-1.png)
+    - Thẻ `<section>`:
+    ![alt text](screenshots\image-2.png)
+    - Thẻ `<footer>`:
+    ![alt text](screenshots\image-3.png)
+    - Thẻ `<body>` mà trang đó KHÔNG dùng đúng semantic:
+    ![alt text](screenshots\image-4.png)
+2. Thẻ `<table>` hiển thị chi tiết nội dung sản phẩm
+    - ![alt text](screenshots\image-5.png)
 
-    - Thẻ <section>:
-    ![alt text](image-2.png)
+3. Thẻ `<form>`:
+   - ![alt text](screenshots\image-6.png)
 
-    - Thẻ <footer>:
-    ![alt text](image-3.png)
-
-    - Thẻ <body>mà trang đó KHÔNG dùng đúng semantic:
-    ![alt text](image-4.png)
-
-2. Thẻ <table> hiển thị chi tiết nội dung sản phẩm
-    - ![alt text](image-5.png)
-
-3. Thẻ <form>:
-   - ![alt text](image-6.png)
-
-Form có action là <action="/tim-kiem">. Khi submit, dữ liệu sẽ được gửi đến đường dẫn /tim-kiem
+Form có action là `<action="/tim-kiem">`. Khi submit, dữ liệu sẽ được gửi đến đường dẫn /tim-kiem
 
 Không có method nên sẽ mặc định là GET
 
@@ -147,7 +135,7 @@ Input có 2 loại là text để nhập và button để click
 PHẦN C: SUY LUẬN
 
 Câu C1:
-
+```html
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -162,13 +150,11 @@ Câu C1:
 <header> <!-- header: phần đầu trang -->
     <h1>ShopTLU</h1>
 
-```
 <nav> <!-- nav: điều hướng chính -->
     <a href="#">Trang chủ</a>
     <a href="#">Sản phẩm</a>
     <a href="#">Liên hệ</a>
 </nav>
-```
 
 </header>
 
@@ -186,7 +172,6 @@ Câu C1:
 
 <main> <!-- main: nội dung chính của trang -->
 
-```
 <!-- SECTION: SẢN PHẨM -->
 <section> <!-- section: nhóm nội dung sản phẩm -->
     
@@ -263,7 +248,6 @@ Câu C1:
 
     </article>
 </section>
-```
 
 </main>
 
@@ -272,7 +256,6 @@ Câu C1:
 <aside> <!-- aside: nội dung phụ -->
     <h2>Sản phẩm tương tự</h2>
 
-```
 <article> <!-- article: mỗi sản phẩm -->
     <p>Sản phẩm 1</p>
 </article>
@@ -280,7 +263,6 @@ Câu C1:
 <article>
     <p>Sản phẩm 2</p>
 </article>
-```
 
 </aside>
 
@@ -292,7 +274,7 @@ Câu C1:
 
 </body>
 </html>
-
+```
 
 Câu C2:
 

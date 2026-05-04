@@ -25,15 +25,20 @@ Câu A1:
 Câu A2:
 
 TH1: Form không submit vì required bắt buộc phải có giá trị. value="" = rỗng → vi phạm, hiện tooltip "Vui lòng điền vào trường này"
+
 TH2: Form không submit vì type="email" tự validate định dạng phải có @ và domain. "abc" không có @ → sai định dạng, hiện tooltip "Vui lòng nhập địa chỉ email"
+
 TH3: Form không submit vì max="10" giới hạn giá trị tối đa. 15 > 10 → vi phạm, hiện tooltip "Giá trị phải nhỏ hơn hoặc bằng 10"
+
 TH4: Form không submit vì pattern yêu cầu đúng 10 chữ số liên tiếp. "abc123" có chữ cái và chỉ 6 ký tự → không khớp regex, hiện tooltip "Vui lòng khớp định dạng yêu cầu"
+
 TH5: Form không submit vì minlength="8" yêu cầu độ dài tối thiểu 8 ký tự. "123" chỉ có 3 ký tự → vi phạm, hiện tooltip "Phải có từ 8 ký tự trở lên"
 
 Câu A3:
 
 1.
 Screen reader sẽ đọc nội dung của thẻ <label> khi người dùng focus vào ô nhập liệu, giúp họ biết chính xác ô đó dùng để nhập thông tin gì (ví dụ: "Email").
+
 2.
 Khi nào dùng: Dùng để nhóm các phần tử có liên quan logic với nhau trong một form lớn, giúp cấu trúc form mạch lạc và dễ hiểu hơn cho cả người dùng bình thường và công cụ hỗ trợ.
 Ví dụ cụ thể: Nhóm các thông tin về địa chỉ giao hàng trong form thanh toán:
@@ -45,6 +50,7 @@ Ví dụ cụ thể: Nhóm các thông tin về địa chỉ giao hàng trong fo
       <input type="text" id="addr" name="addr">
   </fieldset>
 3.
+
 aria-label: Dùng khi 1 phẩn tử tương tác(button) không có văn bản hiển thị trên màn hình nhưng vẫn cần mô tả cho screen reader
 
 vì aria-label sẽ ghi đè nội dung của <label>, có thể gây nhầm lẫn nếu thông tin không khớp nhau

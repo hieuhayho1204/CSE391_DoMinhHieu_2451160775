@@ -7,9 +7,9 @@ Câu A1:
 1. Inline CSS (trong thẻ) —  Tránh dùng
 
   + Ví dụ code:
-    <h1 style="color: red; font-size: 24px;">
+    `<h1 style="color: red; font-size: 24px;">`
     Tiêu đề
-</h1>
+`</h1>`
 
   + Ưu điểm:
    - Viết nhanh
@@ -24,17 +24,17 @@ Câu A1:
    - Debug nhanh
    - Chỉnh tạm thời một element nhỏ
 
-2. Internal CSS (trong <style>) — Chấp nhận được cho prototype
+2. Internal CSS `(trong <style>)` — Chấp nhận được cho prototype
 
   + Ví dụ code:
-   <head>
-    <style>
+   `<head>`
+    `<style>`
         h1 {
             color: red;
             font-size: 24px;
         }
-    </style>
-</head>
+    `</style>`
+`</head>`
 
   + Ưu điểm:
    - Gọn hơn inline CSS
@@ -54,9 +54,9 @@ Câu A1:
   + Ví dụ code:
 
     File HTML:
-    <head>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    `<head>`
+    `<link rel="stylesheet" href="styles.css">`
+`</head>`
 
     File styles.css:
     h1 {

@@ -1,4 +1,4 @@
-PHẦN A - KIỂM TRA ĐỌC HIỂU
+## PHẦN A - KIỂM TRA ĐỌC HIỂU
 
 ## Câu A1:
 
@@ -193,3 +193,158 @@ p {
 
 - Element sẽ có màu đen.
 - Vì `!important` có độ ưu tiên cao hơn các rule CSS thông thường nên sẽ ghi đè các rule khác.
+
+## PHẦN B: THỰC HÀNH CODE
+
+## Bài B1:
+
+5 loại selector có trong file style.css
+- Loại element: body, header, table, footer
+- Loại class: nav a.active
+- Loại id: #about_me, #contact a
+- Loại descendant: nav a, thead th, tbody td, #about_me p
+- Loại pseudo-class: nav a:hover, tbody tr:nth-child(even), tbody tr:hover, #contact a:hover
+
+## Bài B2:
+
+1. Phần 1 — content-box vs border-box
+  - Hộp 1 (content-box): chiều rộng thực tế = 350px (đo từ DevTools)
+  - Hộp 2 (border-box): chiều rộng thực tế = 300px (đo từ DevTools)
+Giải thích sự khác biệt:
+
+  - Hộp 1 dùng content-box (mặc định): width: 300px chỉ tính phần content. Padding và border được cộng thêm ra ngoài → chiều rộng thực tế = 300 + 20×2 + 5×2 = 350px.
+  - Hộp 2 dùng border-box: width: 300px là tổng kích thước bao gồm cả padding và border. Chúng co vào trong → chiều rộng thực tế luôn đúng 300px.
+
+2.Phần 2 — Layout 3 cột
+
+Trường hợp KHÔNG dùng border-box (content-box):
+
+  - Cột trái: 250 + 15×2 = 280px
+  -Cột giữa: 500 + 20×2 = 540px
+  - Cột phải: 250 + 15×2 = 280px
+  - Tổng = 280 + 540 + 280 = 1100px → vượt quá container 1000px → layout vỡ
+Trường hợp CÓ dùng border-box:
+
+  - Cột trái: đúng 250px
+  - Cột giữa: đúng 500px
+  - Cột phải: đúng 250px
+  - Tổng = 250 + 500 + 250 = 1000px → vừa khít container → layout đúng
+
+## Bài B3:
+
+1. Liệt kê 10 rules + specificity score
+
+  - `p { color: gray; }` - Specificity: (0, 0, 1)  
+  - `html p { color: sienna; }` - Specificity: (0, 0, 2)  
+  - `.text { color: blue; }` - Specificity: (0, 1, 0)  
+  - `p.text { color: green; }` - Specificity: (0, 1, 1)  
+  - `.text.highlight { color: orange; }` - Specificity: (0, 2, 0)  
+  - `p.text.highlight { color: purple; }` - Specificity: (0, 2, 1)  
+  - `#demo { color: crimson; }` - Specificity: (1, 0, 0)  
+  - `p#demo { color: deeppink; }` - Specificity: (1, 0, 1)  
+  - `#demo.text { color: darkorange; }` - Specificity: (1, 1, 0)  
+  - `p#demo.text.highlight { color: red; }` - Specificity: (1, 2, 1) ← THẮNG!
+
+2. Element cuối cùng hiển thị màu gì? Tại sao?
+
+Màu: `red` — do Rule 10 có selector `p#demo.text.highlight` với specificity cao nhất.
+
+Tính theo hệ 3 cột (ID, Class, Tag):
+
+  - `p `→ tag → cột Tag +1 → (0, 0, 1)  
+  - `#demo` → ID → cột ID +1 → (1, 0, 0)  
+  - `.text` → class → cột Class +1 → (0, 1, 0)  
+  - `.highlight` → class → cột Class +1 → (0, 1, 0)  
+
+  - Tổng: (1, 2, 1)
+
+So sánh với tất cả rules còn lại từ cột trái sang phải — Rule 10 có cột ID = 1, trong khi Rules 1–6 có cột ID = 0 nên thua ngay. Rules 7–9 tuy cùng cột ID = 1 nhưng cột Class thấp hơn (tối đa 1, trong khi Rule 10 có 2) → Rule 10 thắng tất cả.
+
+3. Thay đổi thứ tự rules trong CSS — Kết quả có đổi không?
+
+Không đổi.  
+Khi các rules có specificity khác nhau, thứ tự viết trong file CSS không ảnh hưởng. Rule có specificity cao hơn luôn thắng dù viết trước hay sau.
+
+Thứ tự chỉ quan trọng khi 2 rules có specificity bằng nhau — lúc đó rule viết sau thắng (cascade). Ví dụ nếu có 2 rule cùng specificity 121, rule nào đứng sau trong file CSS sẽ được áp dụng.
+
+## PHẦN C:
+
+## Câu C1:
+
+1. Chiều rộng thực tế (content-box)
+
+  Sidebar: 300 + 20×2 + 1×2 = 342px
+  Content: 660 + 30×2 + 1×2 = 722px
+  Tổng: 342 + 722 = 1064px
+
+2. Tại sao layout bị vỡ?
+  Container chỉ rộng 960px nhưng tổng 2 cột là 1064px — vượt quá 104px. Vì đang dùng content-box (mặc định), padding và border được cộng thêm ra ngoài width, làm 2 cột phình to hơn dự tính. Không đủ chỗ → content bị đẩy xuống dòng mới.
+
+3. Hai cách sửa
+
+  ## Cách 1: Dùng border-box
+  Thêm `box-sizing: border-box` vào cả sidebar và content. Padding và border sẽ co vào trong, width giữ đúng như đặt → tổng = 300 + 660 = 960px, vừa khít container.
+
+  ```css
+.sidebar {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+.content {
+  box-sizing: border-box;
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+}
+```
+
+  ## Cách 2: Tự trừ padding + border khỏi width (không dùng border-box)
+  Tính ngược lại width cần khai báo để chiều rộng thực tế vừa khít 960px.
+
+    - Sidebar muốn chiều rộng thực tế = 300px → width khai báo = 300 - 20×2 - 1×2 = 258px
+    - Content muốn chiều rộng thực tế = 660px → width khai báo = 660 - 30×2 - 1×2 = 598px
+    - Kiểm tra: (258 + 40 + 2) + (598 + 60 + 2) = 300 + 660 = 960px ✓
+
+    ```css
+.sidebar {
+  width: 258px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+}
+
+.content {
+  width: 598px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+}
+```
+
+## Câu C2:
+
+1. "Sản phẩm A"(h2):
+  - font-size = 20px
+  - color = green
+     font-size: Selector `.card .title` nhắm trực tiếp thẻ h2 với điểm Specificity là (0, 2, 0). Nên nó ghi đề lên giá trị kế thừa từ `body` và `.container`.
+     color : Có 2 selector cùng nhắm vào là `#featured .title` và `.highlight`. Tuy nhiên, selector `.highlight` có từ khóa `!important` nên nó có quyền ưu tiên cao nhất do đó color có màu green.
+
+2. "Mô tả sản phẩm":
+  - color = blue
+     Selector .card p có thuộc tính color: inherit; vì từ khóa inherit buộc phần tử lấy giá trị màu từ phần tử cha trực tiếp là <div class="card" id="featured">. do selector .card {color: blue;} nên p có màu blue.
+
+3. "Sản phẩm B"(thẻ h2):
+  - `font-size = 20px`
+  - `color = blue`
+     - fort-size: Chịu tác động trực tiếp của selector `.card .title` nên có kích thước là 20px.
+     - color: Không có bất kỳ selector trực tiếp nào quy định màu cho thẻ h2 này. Do thẻ `h2` sẽ kế thừa màu từ phần tử cha gần nhất có khai báo màu là `.card {color: blue;}` nên h2 có màu blue.
+
+4. "Mô tả sản phẩm B"(thẻ p.highlight)
+  - `color = green`
+     color có sự tranh chấp của `.card p { color: inherit; }` và `.highlight { color: green !important; }` . Do `!important `có quyền ưu tiên cao nhất nên màu hiển thị sẽ là màu green.
+

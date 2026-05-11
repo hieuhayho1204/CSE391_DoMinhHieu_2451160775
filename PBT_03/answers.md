@@ -6,25 +6,25 @@ Câu A1:
 
 1. Inline CSS (trong thẻ) —  Tránh dùng
 
-  + Ví dụ code:
+  Ví dụ code:
     `<h1 style="color: red; font-size: 24px;">Tiêu đề</h1>`
 
-  + Ưu điểm:
+  Ưu điểm:
    - Viết nhanh
    - Dễ test hoặc debug nhanh
 
-  + Nhược điểm:
+  Nhược điểm:
    - Khó quản lý khi code nhiều
    - Không tái sử dụng được
    - Làm HTML bị rối
 
-  + Khi nào nên dùng:
+  Khi nào nên dùng:
    - Debug nhanh
    - Chỉnh tạm thời một element nhỏ
 
 2. Internal CSS `(trong <style>)` — Chấp nhận được cho prototype
 
-  + Ví dụ code:
+  Ví dụ code:
    `<head>`
     `<style>`
         h1 {
@@ -34,22 +34,22 @@ Câu A1:
     `</style>`
 `</head>`
 
-  + Ưu điểm:
+  Ưu điểm:
    - Gọn hơn inline CSS
    - Không cần tạo file CSS riêng
 
-  + Nhược điểm
+  Nhược điểm
    - Chỉ dùng được cho 1 trang HTML
    - Khó bảo trì với website lớn
 
-  + Khi nào nên dùng:
+  Khi nào nên dùng:
    - Prototype
    - Bài tập nhỏ
    - Website đơn giản
 
 3. External CSS (file riêng) — Chuẩn production
 
-  + Ví dụ code:
+  Ví dụ code:
 
     File HTML:
     `<head>`
@@ -61,23 +61,23 @@ Câu A1:
     color: #2563eb;
     font-size: 32px;}
 
-  + Ưu điểm:
+  Ưu điểm:
    - Quản lý chuyên nghiệp
    - Tái sử dụng cho nhiều trang
    - Dễ bảo trì và mở rộng
 
-  + Nhược điểm:
+  Nhược điểm:
    - Phải tạo thêm file CSS
    - Nếu link sai thì CSS không hoạt động
 
-  + Khi nào nên dùng:
+  Khi nào nên dùng:
    - Dự án thực tế
    - Website nhiều trang
    - Production
 
-- Câu hỏi thêm: 
- + Thứ tự ưu tiên: Inline CSS > Internal CSS > External CSS
- + Giải thích: 
+Câu hỏi thêm: 
+  Thứ tự ưu tiên: Inline CSS > Internal CSS > External CSS
+  Giải thích: 
   - CSS hoạt động theo cơ chế Cascade (thác nước).
   - Style có độ ưu tiên cao hơn sẽ ghi đè style thấp hơn.
       External CSS có ưu tiên thấp nhất

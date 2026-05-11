@@ -7,9 +7,7 @@ Câu A1:
 1. Inline CSS (trong thẻ) —  Tránh dùng
 
   + Ví dụ code:
-    `<h1 style="color: red; font-size: 24px;">`
-    Tiêu đề
-`</h1>`
+    `<h1 style="color: red; font-size: 24px;">Tiêu đề</h1>`
 
   + Ưu điểm:
    - Viết nhanh

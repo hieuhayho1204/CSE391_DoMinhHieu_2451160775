@@ -25,14 +25,16 @@ Câu A1:
 2. Internal CSS `(trong <style>)` — Chấp nhận được cho prototype
 
   Ví dụ code:
-   `<head>`
-    `<style>`
+   ```html
+<head>
+    <style>
         h1 {
             color: red;
             font-size: 24px;
         }
-    `</style>`
-`</head>`
+    </style>
+</head>
+```
 
   Ưu điểm:
    - Gọn hơn inline CSS

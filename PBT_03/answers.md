@@ -53,16 +53,20 @@ Câu A1:
 
   Ví dụ code:
 
-    File HTML:
-    `<head>`
-    `<link rel="stylesheet" href="styles.css">`
-`</head>`
+File HTML:
+```html
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+```
 
-    File styles.css:
-    h1 {
+File styles.css:
+```css
+h1 {
     color: #2563eb;
-    font-size: 32px;}
-
+    font-size: 32px;
+}
+```
   Ưu điểm:
    - Quản lý chuyên nghiệp
    - Tái sử dụng cho nhiều trang

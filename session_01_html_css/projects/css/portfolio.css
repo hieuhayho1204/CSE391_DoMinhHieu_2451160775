@@ -1,0 +1,114 @@
+.portfolio-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    margin-bottom: 28px;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--color-primary);
+    transition:  0.3s ease;
+    border-radius: 20px;
+}
+.active, .filter-btn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.portfolio-item img {
+    aspect-ratio: 4/3;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(30, 41, 59, 0.6) 50%,
+        transparent 100%
+    );
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Responsive grid: 3 / 2 / 1 columns */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2000;
+}
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.4rem;
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+}

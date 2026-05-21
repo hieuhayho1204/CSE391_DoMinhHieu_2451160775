@@ -1,38 +1,33 @@
-# Session 1 — HTML/CSS Fundamentals
+# Session 2 — Bootstrap 5
 
 ## 🎯 Mục tiêu
 
-- Nắm vững HTML5 semantic elements
-- Sử dụng CSS Grid và Flexbox cho layout
-- Xây dựng giao diện responsive (mobile-first)
-- Hiểu cách tổ chức code CSS chuẩn khoa học
+- Chuyển đổi Portfolio từ HTML/CSS thuần sang Bootstrap 5
+- Nắm vững Bootstrap grid system và components
+- Tùy biến Bootstrap theme (colors, spacing, typography)
+- Hiểu cách override Bootstrap variables
 
 ---
 
 ## 📁 Cấu trúc thư mục
 
 ```
-session_01_html_css/
+session_02_bootstrap/
 ├── README.md              ← File này
-├── exercises/             ← Đề bài + starter code
-│   ├── 01_hero_section/
-│   ├── 02_about_skills/
-│   ├── 03_portfolio_gallery/
-│   └── 04_contact_footer/
-├── solutions/            ← Solution (không mở trước khi làm bài)
+├── exercises/             ← Đề bài
+│   ├── 01_bootstrap_conversion/
+│   ├── 02_blog_layout/
+│   ├── 03_comment_section/
+│   └── 04_theme_customize/
+├── solutions/            ← Solution
 └── projects/
-    └── portfolio_site/   ← Complete code project
+    └── portfolio_bootstrap/
         ├── index.html
+        ├── blog.html
         ├── css/
-        │   ├── variables.css
-        │   ├── base.css
-        │   ├── header.css
-        │   ├── hero.css
-        │   ├── about.css
-        │   ├── skills.css
-        │   ├── portfolio.css
-        │   ├── contact.css
-        │   └── footer.css
+        │   ├── custom-theme.css
+        │   ├── blog.css
+        │   └── comments.css
         └── js/
             └── main.js
 ```
@@ -51,186 +46,160 @@ session_01_html_css/
 - Không dùng dấu chấm ở cuối
 ```
 
-### Các loại commit TYPE
+### Các loại commit TYPE cho Session 2
 
 | TYPE | Ý nghĩa | Khi nào dùng |
 |------|---------|--------------|
-| `[SETUP]` | Thiết lập dự án | Tạo folder, cấu hình ban đầu |
-| `[FEATURE]` | Thêm tính năng | Implement something new |
-| `[STYLE]` | Styling/CSS | Thêm CSS, layout, styling |
+| `[BOOTSTRAP]` | Bootstrap setup | Thêm CDN, cấu hình Bootstrap |
+| `[FEATURE]` | Thêm tính năng | Components, layouts |
+| `[STYLE]` | Styling | Typography, spacing |
 | `[UI]` | Giao diện | Hover effects, animations |
-| `[BUGFIX]` | Sửa lỗi | Fix bugs |
+| `[CUSTOMIZE]` | Tùy biến theme | Override Bootstrap variables |
+| `[THEME]` | Theme styling | Color palette, dark mode |
 | `[REFACTOR]` | Cấu trúc lại | Tối ưu code |
-| `[STATE]` | JavaScript state | Xử lý state, events |
-| `[VALIDATION]` | Validation | Form validation |
 
 ### Ví dụ commit messages
 
 ```bash
 # ✅ Đúng
-git commit -m "[SETUP] Initialize project structure"
-git commit -m "[FEATURE] Add sticky header navigation"
-git commit -m "[STYLE] Create CSS variables and reset"
-git commit -m "[UI] Implement hero section hover effects"
-git commit -m "[BUGFIX] Fix mobile menu toggle"
+git commit -m "[BOOTSTRAP] Add Bootstrap CDN and initial setup"
+git commit -m "[FEATURE] Convert grid to Bootstrap columns"
+git commit -m "[STYLE] Apply Bootstrap typography utilities"
+git commit -m "[CUSTOMIZE] Override Bootstrap primary color"
+git commit -m "[THEME] Apply complete new color palette"
 
 # ❌ Sai
-git commit -m "init project"                    # thiếu TYPE
-git commit -m "[FEATURE] Added the header"      # quá dài
-git commit -m "fix bug"                        # thiếu TYPE và mô tả
-git commit -m "[FEATURE] Did some stuff"       # không rõ ràng
+git commit -m "added bootstrap"                 # thiếu TYPE
+git commit -m "[FEATURE] did something"         # không rõ ràng
+git commit -m "fix"                              # quá ngắn
 ```
 
 ### Số lượng commit tối thiểu
 
 | Bài tập | Số commit tối thiểu |
 |---------|-------------------|
-| Bài 1.1 (Header + Hero) | 3 commits |
-| Bài 1.2 (About + Skills) | 3 commits |
-| Bài 1.3 (Portfolio) | 3 commits |
-| Bài 1.4 (Contact + Footer) | 3 commits |
+| Bài 2.1 (Bootstrap Conversion) | 3 commits |
+| Bài 2.2 (Blog Layout) | 3 commits |
+| Bài 2.3 (Comment Section) | 3 commits |
+| Bài 2.4 (Theme Customize) | 3 commits |
 | **Tổng cộng** | **12 commits** |
 
 ### Workflow commit cho mỗi bài
 
 ```bash
-# Bài 1.1 - Header + Hero (3 commits)
-git commit -m "[SETUP] Create session folders"
-git commit -m "[FEATURE] Build header navigation"
-git commit -m "[FEATURE] Complete hero section with CTA"
+# Bài 2.1 - Bootstrap Conversion (3 commits)
+git commit -m "[BOOTSTRAP] Add Bootstrap CDN and initial setup"
+git commit -m "[REFACTOR] Convert grid to Bootstrap columns"
+git commit -m "[STYLE] Apply Bootstrap typography utilities"
 
-# Bài 1.2 - About + Skills (3 commits)
-git commit -m "[STYLE] Create about section layout"
-git commit -m "[FEATURE] Add skills progress bars"
-git commit -m "[REFACTOR] Optimize responsive breakpoints"
+# Bài 2.2 - Blog Layout (3 commits)
+git commit -m "[FEATURE] Create blog post cards layout"
+git commit -m "[FEATURE] Build sticky sidebar"
+git commit -m "[FEATURE] Add categories and tags cloud"
 
-# Bài 1.3 - Portfolio (3 commits)
-git commit -m "[FEATURE] Build portfolio grid layout"
-git commit -m "[UI] Add hover zoom effects"
-git commit -m "[FEATURE] Implement CSS-only lightbox"
+# Bài 2.3 - Comment Section (3 commits)
+git commit -m "[FEATURE] Build comment form with Bootstrap"
+git commit -m "[FEATURE] Display threaded comments"
+git commit -m "[STYLE] Responsive comment layout"
 
-# Bài 1.4 - Contact + Footer (3 commits)
-git commit -m "[FEATURE] Style contact form inputs"
-git commit -m "[FEATURE] Add responsive footer"
-git commit -m "[REFACTOR] Final responsive adjustments"
+# Bài 2.4 - Theme Customize (3 commits)
+git commit -m "[CUSTOMIZE] Override Bootstrap primary color"
+git commit -m "[CUSTOMIZE] Add custom spacing scale"
+git commit -m "[THEME] Apply complete new color palette"
 ```
 
 ---
 
 ## 📝 Bài tập (4 bài)
 
-### Bài 1.1 — Header + Hero Section (45 phút)
+### Bài 2.1 — Bootstrap Conversion (45 phút)
 
-**Mục tiêu:** Xây dựng header navigation và hero section với CTA button
+**Mục tiêu:** Chuyển Portfolio v1 (HTML/CSS) sang Bootstrap 5 grid
 
 **Kiến thức:**
-- Semantic HTML: `<header>`, `<nav>`, `<main>`
-- CSS Box Model: margin, padding, border
-- Flexbox centering
+- Bootstrap CDN setup
+- Container, Row, Column grid system
+- Bootstrap typography utilities
 
 **Yêu cầu:**
-- Header cố định (sticky) với logo và navigation links
-- Hero section full viewport height
-- Nút CTA "View My Work" có hover effect
-- Responsive: mobile hamburger menu (CSS-only)
-
-**Starter code:**
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- CSS file sẽ được tạo riêng -->
-</head>
-<body>
-    <!-- Header: Logo + Nav links -->
-    <!-- Hero: Title + Subtitle + CTA Button -->
-</body>
-</html>
-```
+- Thêm Bootstrap 5.3 CSS/JS CDN
+- Thay thế custom grid bằng `.container`, `.row`, `.col-`
+- Responsive breakpoints giữ nguyên
 
 **Commit requirements:**
 ```
-[SETUP] Initialize project structure
-[STYLE] Add base CSS variables and reset
-[FEATURE] Implement header navigation
-[FEATURE] Complete hero section with CTA
+[BOOTSTRAP] Add Bootstrap CDN and initial setup
+[REFACTOR] Convert grid to Bootstrap cols
+[STYLE] Apply Bootstrap typography utilities
 ```
 
 ---
 
-### Bài 1.2 — About + Skills Section (45 phút)
+### Bài 2.2 — Blog Layout + Sidebar (45 phút)
 
-**Mục tiêu:** Xây dựng phần about và skills với progress bars
+**Mục tiêu:** Xây dựng blog layout với sidebar sử dụng Bootstrap components
 
 **Kiến thức:**
-- CSS Grid: 2-column layout
-- CSS Typography: font-size, line-height, font-weight
-- CSS Custom Properties (variables)
-- Progress bar animation
+- Bootstrap Cards, Badges, List groups
+- Sticky sidebar với `.sticky-top`
+- Navigation components
 
 **Yêu cầu:**
-- 2-column layout: avatar/image + text (desktop), stacked (mobile)
-- Skills section với progress bars (HTML, CSS, JavaScript)
-- Animation khi scroll vào viewport
+- Blog posts displayed as cards
+- Sidebar: categories, recent posts, tags cloud
+- Sticky sidebar on desktop
 
 **Commit requirements:**
 ```
-[STYLE] Create about section layout
-[FEATURE] Add skills progress bars
-[REFACTOR] Optimize responsive breakpoints
+[FEATURE] Create blog post cards layout
+[FEATURE] Build sticky sidebar
+[FEATURE] Add categories and tags cloud
 ```
 
 ---
 
-### Bài 1.3 — Portfolio Grid Gallery (45 phút)
+### Bài 2.3 — Comment Section UI (45 phút)
 
-**Mục tiêu:** Xây dựng gallery grid với hover effects
+**Mục tiêu:** Xây dựng comment system UI với Bootstrap forms
 
 **Kiến thức:**
-- CSS Grid: `grid-template-columns`, `gap`
-- Image aspect ratio: `aspect-ratio`
-- Hover effects: `transform`, `scale`
-- CSS-only lightbox
+- Bootstrap Forms, Input groups
+- Form validation styling
+- Avatar + comment thread display
 
 **Yêu cầu:**
-- Responsive grid: 3 columns (desktop), 2 (tablet), 1 (mobile)
-- Hover zoom effect trên mỗi item
-- Lightbox overlay khi click (CSS `:target` selector)
-- 6 portfolio items với placeholder images
+- Comment form with avatar
+- Threaded comments display
+- Reply button UI
 
 **Commit requirements:**
 ```
-[FEATURE] Build portfolio grid layout
-[FEATURE] Add hover zoom effects
-[FEATURE] Implement CSS-only lightbox
+[FEATURE] Build comment form with Bootstrap
+[FEATURE] Display threaded comments
+[STYLE] Responsive comment layout
 ```
 
 ---
 
-### Bài 1.4 — Contact Form + Footer (45 phút)
+### Bài 2.4 — Customize Bootstrap Theme (45 phút)
 
-**Mục tiêu:** Xây dựng contact form và responsive footer
+**Mục tiêu:** Tùy biến Bootstrap theme khác biệt với default
 
 **Kiến thức:**
-- Form styling: inputs, labels, buttons
-- CSS validation UI: `:valid`, `:invalid`, `:focus`
-- Footer layout với social icons
-- Responsive form layout
+- Bootstrap Sass variables override
+- CSS custom properties
+- Primary color, spacing, border-radius changes
 
 **Yêu cầu:**
-- Form fields: Name, Email, Message (textarea)
-- Validation UI feedback (border color)
-- Footer với social links (GitHub, LinkedIn, Email)
-- Mobile-first responsive form
+- Override `$primary` color (từ indigo sang teal/green)
+- Custom spacing scale
+- Border-radius changes
 
 **Commit requirements:**
 ```
-[FEATURE] Style contact form inputs
-[FEATURE] Add responsive footer
-[REFACTOR] Final responsive adjustments
+[CUSTOMIZE] Override Bootstrap primary color
+[CUSTOMIZE] Add custom spacing scale
+[THEME] Apply complete new color palette
 ```
 
 ---
@@ -239,67 +208,53 @@ git commit -m "[REFACTOR] Final responsive adjustments"
 
 | Tiêu chí | Điểm | Mô tả |
 |----------|------|-------|
-| **Hoàn thành yêu cầu** | 4 | Tất cả 4 bài đều hoàn thành, responsive |
-| **Code quality** | 2 | CSS có variables, tổ chức tốt |
+| **Hoàn thành yêu cầu** | 4 | Tất cả 4 bài đều hoàn thành |
+| **Code quality** | 2 | Bootstrap convention, clean overrides |
 | **Git commit** | 2 | Đủ commits theo convention |
 | **Problem solving** | 2 | Tự code, không copy nguyên cả file |
 
 ---
 
-## 🐛 Troubleshooting thường gặp
-
-### 1. CSS Grid không responsive
-```css
-/* Sai */
-.grid { display: grid; grid-template-columns: 300px 300px; }
-
-/* Đúng - dùng auto-fill */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
-```
-
-### 2. Header sticky không hoạt động
-```css
-/* Phải có top: 0 */
-header { position: sticky; top: 0; z-index: 100; }
-```
-
-### 3. Form inputs trên mobile quá nhỏ
-```css
-/* Đặt min-height và font-size */
-input, textarea { min-height: 44px; font-size: 16px; }
-```
-
----
-
 ## ✅ Checklist trước khi nộp
 
-- [ ] Header sticky trên mọi breakpoint
-- [ ] Hero section full viewport height
-- [ ] Portfolio grid responsive (3/2/1 columns)
-- [ ] CSS-only lightbox hoạt động
-- [ ] Contact form với validation UI
-- [ ] Footer responsive trên mobile
-- [ ] Tối thiểu 12 commits với meaningful messages
+- [ ] Bootstrap CDN hoạt động
+- [ ] Grid chuyển sang Bootstrap columns
+- [ ] Sidebar sticky hoạt động
+- [ ] Comment form responsive
+- [ ] Theme customize khác default
+- [ ] Tối thiểu 12 commits
 - [ ] Commit messages đúng format `[TYPE] Description`
 
 ---
 
-## 📚 Tài liệu tham khảo
+## 🐛 Troubleshooting thường gặp
 
-- [MDN: CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
-- [CSS-Tricks: Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [HTML Semantics](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure)
+### Bootstrap not responsive
+```html
+<!-- Phải có meta viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+### Container vs Container-fluid
+```html
+<!-- Centered, max-width -->
+<div class="container"></div>
+
+<!-- Full width -->
+<div class="container-fluid"></div>
+```
+
+### Column not working
+```html
+<!-- Sai: col phải trong row -->
+<div class="col-md-4"></div>
+
+<!-- Đúng: -->
+<div class="row">
+    <div class="col-md-4"></div>
+</div>
+```
 
 ---
 
-## ▶️ Bắt đầu
-
-1. Fork repository `session_01_portfolio_htmlcss`
-2. Clone về máy local
-3. Tạo folder structure theo cấu trúc trên
-4. Commit `[SETUP] Initialize project structure` trước
-5. Làm bài 1.1 → commit → bài 1.2 → commit → ....
-
----
-
-**← [ Quay lại Lab Practical](../README.md) | Tiếp theo: [Session 2 - Bootstrap 5](../session_02_bootstrap/README.md) →**
+**← [ Quay lại Lab Practical](../README.md) | [Session 1](../session_01_html_css/README.md) | Tiếp theo: [Session 3 - JavaScript](../session_03_javascript/README.md) →**

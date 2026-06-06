@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Phiếu Mượn Sách</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>QUẢN LÝ PHIẾU MƯỢN SÁCH</h1>
+
+        <div class="stats">
+            <div class="card">
+                <h3>Tổng Phiếu</h3>
+                <span id="total">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Đang Mượn</h3>
+                <span id="borrowing">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Đã Trả</h3>
+                <span id="returned">0</span>
+            </div>
+        </div>
+
+        <button id="openModal">+ Thêm Phiếu Mượn</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã PM</th>
+                    <th>Người Mượn</th>
+                    <th>Mã Sách</th>
+                    <th>Thể Loại</th>
+                    <th>Ngày Mượn</th>
+                    <th>Hạn Trả</th>
+                    <th>Trạng Thái</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+
+            <tbody id="borrowTable">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <h2 id="formTitle">Thêm Phiếu Mượn</h2>
+
+            <form id="borrowForm">
+
+                <input type="hidden" id="editIndex">
+
+                <label>Mã Phiếu Mượn</label>
+                <input type="text" id="borrowId">
+                <small class="error" id="errBorrowId"></small>
+
+                <label>Họ Tên Người Mượn</label>
+                <input type="text" id="borrower">
+                <small class="error" id="errBorrower"></small>
+
+                <label>Mã Sách</label>
+                <input type="text" id="bookId">
+                <small class="error" id="errBookId"></small>
+
+                <label>Thể Loại</label>
+                <select id="category">
+                    <option value="">Chọn thể loại</option>
+                    <option>CNTT</option>
+                    <option>Kinh tế</option>
+                    <option>Ngoại ngữ</option>
+                    <option>Kỹ năng</option>
+                </select>
+                <small class="error" id="errCategory"></small>
+
+                <label>Ngày Mượn</label>
+                <input type="date" id="borrowDate">
+                <small class="error" id="errBorrowDate"></small>
+
+                <label>Hạn Trả</label>
+                <input type="date" id="dueDate">
+                <small class="error" id="errDueDate"></small>
+
+                <label>Số Điện Thoại</label>
+                <input type="text" id="phone">
+                <small class="error" id="errPhone"></small>
+
+                <label>Email</label>
+                <input type="text" id="email">
+                <small class="error" id="errEmail"></small>
+
+                <label>Trạng Thái</label>
+                <select id="status">
+                    <option value="">Chọn trạng thái</option>
+                    <option>Đang mượn</option>
+                    <option>Đã trả</option>
+                </select>
+                <small class="error" id="errStatus"></small>
+
+                <label>Ghi Chú</label>
+                <textarea id="note"></textarea>
+                <small class="error" id="errNote"></small>
+
+                <div class="buttons">
+                    <button type="submit">Lưu</button>
+                    <button type="button" id="closeModal">Đóng</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
